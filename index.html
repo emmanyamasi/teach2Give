@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Card</title>
+    <!--link to css for  styling-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <!--section  for faq  card-->
+    <section class="faq-section">
+        <!--card  to hold faqs-->
+        <div class="col-md-12 card" >
+            <h1 class="faq-title">FAQs</h1>
+<!--faq item 1-->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h2>What is Frontend Mentor, and how will it help me?</h2>
+                    <!--toggle icon to expand-->
+                    <span class="toggle-icon">+</span>
+                </div>
+                <!--answer-->
+                <div class="faq-answer">
+                    <p>Frontend Mentor offers realistic coding challenges to help developers improve their frontend skills. It's suitable for all levels and ideal for portfolio building.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h2>Is Frontend Mentor free?</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Frontend Mentor has free challenges, but there are also premium options with additional features.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h2>Can I use Frontend Mentor projects in my portfolio?</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can use the completed projects in your portfolio to showcase your skills.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h2>How can I get help if I'm stuck on a challenge?</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can join the Frontend Mentor community or ask for help on the Slack group or forums.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--javascript for faq toggle functionality-->
+
+    <script>
+        <!--selects all faqitems-->
+        const faqItems = document.querySelectorAll('.faq-item');
+//for loop for each faqitem
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const toggleIcon = item.querySelector('.toggle-icon');  // Select the toggle icon
+// click event listener  to the question
+    question.addEventListener('click', () => {
+        // Close all open answers
+        faqItems.forEach(item => {
+            const answer = item.querySelector('.faq-answer');
+            answer.style.display = 'none';
+            const toggleIcon = item.querySelector('.toggle-icon');
+            toggleIcon.textContent = '+';  // Reset the icon to '+' for all questions
+        });
+
+        // Toggle the clicked answer
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            toggleIcon.textContent = '+';  // Change icon back to '+'
+        } else {
+            answer.style.display = 'block';
+            toggleIcon.textContent = '-';  // Change icon to '-'
+        }
+    });
+});
+
+    </script>
+
+</body>
+</html>
