@@ -57,5 +57,15 @@ This project is a responsive FAQ card built with HTML, CSS, and  Inline JavaScri
 To view the project, open the `index.html` file in your browser.
 
 ---
+# CAPITALIZE FIST LETTER FUNCTION IN PYTHON
+The python code  contains a simple function  that  capitalizes the first letter of each word given in the message 
+Python  has an inbuilt  method  title() which capitalizes the  first letter  of  each   word  in a string 
+---
+
+## REQUIREMENTS
+.Python 3
+
+
+
 
 
